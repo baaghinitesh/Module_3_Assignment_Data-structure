@@ -1,0 +1,271 @@
+Q1.	Discuss string slicing and provide examples?
+
+Ans=>	String slicing in Python allows you to extract a specific portion of a string by specifying a range of indices.
+	Python slicing can be done in two ways:
+	a. Using a slice() method
+	b. Using the array slicing  [:: ] method
+	
+	a. Using a slice() method :- The slice() constructor creates a slice object representing the set of indices specified by range(start, stop, step)
+	start:Starting index where the slicing of object starts.
+	stop: Ending index where the slicing of object stops.
+	step: It is an optional argument that determines the increment between each index for slicing.
+	Return Type: Returns a sliced object containing elements in the given range only. 
+
+	String = 'Nitesh jha'
+
+	s1 = slice(3)
+	s2 = slice(1, 10, 2)
+	s3 = slice(-1, -11, -2)
+
+	print(String[s1])
+	print(String[s2])
+	print(String[s3])
+
+Q2.	Explain the key features of list in python?
+
+	Python list is a sequence data type which is used to store the collection of hetrogeneous data. A single list may contain DataTypes like Integers, Strings, as well as Objects. Lists are mutable, and hence, they can be altered even after their creation. Lists are dynamic. list items can be added, removed or changed after the list is defined. Lists are ordered, newly added items will be placed at the end of the list. Lists use zero-based indexing, every list item has an associated index, and the first item's index is 0.
+	Here we are creating a Python List using [].
+
+	Var = ["Nitesh","jha",10,20, 10+5j]
+	print(Var)
+
+
+Q3.	Describe how to acess, modify, and delete elements in a list with examples. 
+
+Ans=>	a. You access the list items by referring to the index number starting from 0.
+
+ 	thislist = ["apple", "banana", "cherry"]
+	print(thislist[1])
+	Negative Indexing
+	Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item etc.
+
+	thislist = ["apple", "banana", "cherry"]
+	print(thislist[-1])
+
+	b. Modify
+	lst = ['Iris', 'Orchids', 'Rose', 'Lavender','Lily', 'Carnations']
+	
+
+	c. Remove an Item from a List
+	We will use a different method to Remove Elements from the List in Python:
+
+	Using Python remove()
+	Using Python del
+	Using Python discard()
+
+	i. Remove Elements from the List using remove()
+	We can remove elements from the list by passing the value of the item to be deleted as the parameter to remove the () function.
+	lst = ['Iris', 'Orchids', 'Rose', 'Lavender',
+      'Lily', 'Carnations']
+	print(list)
+	lst.remove('Orchids')
+	print(list)
+
+	ii. Remove Element from the List using del()
+	We can remove elements from the list using Del(). The Python del statement is not a function of List. Items of the list can be 	deleted using the del statement by specifying the index of the item (element) to be deleted.
+
+	lst = ['Iris', 'Orchids', 'Rose', 'Lavender',
+	'Lily', 'Carnations']
+	print(lst)
+
+	del lst[1]
+	print(lst)
+
+	iii. Remove Element from the List Using discard()
+	We can remove elements from the list using discard(). In this method, we convert a list into a set and then delete an item using the 	discard() function. Then we convert the set back to the list.
+
+
+	lst = ['Iris', 'Orchids', 'Rose', 'Lavender',
+	'Lily', 'Carnations']
+	print(lst)
+
+	lst = set(lst)
+	lst.discard('Orchids')
+
+	lst=list(lst)
+
+	print(lst)
+
+
+Q4.	Compare and contrast touples and and list with examples.
+
+Ans=>	Python Tuple is a collection of objects separated by commas. In some ways, a tuple is similar to a Python list in terms of indexing, nested objects, and repetition but the main 	difference between both is Python tuple is immutable, unlike the Python list which is mutable.
+
+	Lists and Tuples in Python are two classes of Python Data Structures. The list structure is dynamic, and readily changed whereas the tuple structure is static and cannot be changed. 	This means that the tuple is generally faster than the list. Lists are denoted by square brackets and tuples are denoted with parenthesis.
+
+	Differences between List and Tuple in Python
+	Sno	LIST							TUPLE
+
+	1	Lists are mutable					Tuples are immutable
+	2	The implication of iterations 		The implication of iterations is comparatively Faster
+		is Time-consuming
+	3	The list is better for performing		A Tuple data type is appropriate for accessing the elements
+		operations, such as insertion and
+		deletion.
+	4	Lists consume more memory			Tuple consumes less memory as compared to the list
+	5	Lists have several built-in methods		Tuple does not have many built-in methods.
+	6	Unexpected changes and errors are		Because tuples don’t change they are far less error-prone.
+		more likely to occur
+
+	#Example to show mutability
+	List = [1, 2, 4, 4, 3, 3, 3, 6, 5]
+	print(List)
+
+	List[3] = 77
+	print(List)
+
+	# code to test that tuples are immutable
+	tuple1 = (0, 1, 2, 3)
+	tuple1[0] = 4
+	print(tuple1)
+
+
+Q5.	Describe the key features of sets and provide examples of their  uses.
+
+Ans=>	A Set in Python programming is an unordered collection data type that is iterable and has no duplicate elements. While sets are mutable, meaning you can add or remove elements after 	their creation, the individual elements within the set must be immutable and cannot be changed directly.
+	The major advantage of using a set, as opposed to a list, is that it has a highly optimized method for checking whether a specific element is contained in the set. This is based on a 	data structure known as a hash table. Since sets are unordered, we cannot access items using indexes as we do in lists.
+
+	a. Sets in Python are versatile and can be used in a variety of scenarios. 
+
+	numbers = [1, 2, 2, 3, 4, 4, 5]
+
+	unique_numbers = set(numbers)
+
+	unique_list = list(unique_numbers)
+	print(unique_list)
+
+	b. Membership Testing
+	Checking membership in a set is faster than in a list due to the underlying hash table implementation.
+
+	fruits = {"apple", "banana", "cherry"}
+
+	if "banana" in fruits:
+	print("Banana is in the set")
+
+	b. Set Operations
+	Sets support standard mathematical operations like union, intersection, difference, and symmetric difference.
+
+	set1 = {1, 2, 3}
+	set2 = {3, 4, 5}
+
+	# Union
+	print(set1 | set2)  # Output: {1, 2, 3, 4, 5}
+
+	# Intersection
+	print(set1 & set2)  # Output: {3}
+
+	# Difference
+	print(set1 - set2)  # Output: {1, 2}
+
+	# Symmetric Difference
+	print(set1 ^ set2)  # Output: {1, 2, 4, 5}
+
+Q6. 	Describe the use cases of touples and sets in python.
+
+Ans=> Tuples and sets are both versatile data structures in Python, but they serve different purposes and have distinct characteristics. Here's a breakdown of their use cases:
+
+	Tuples
+
+	a. Fixed Collections of Heterogeneous Data: Tuples are often used to group related pieces of data together that should not change. For example, a tuple can represent a record, such 	as a point in a 2D space (x, y), or a database row (id, name, age).
+
+	b. Function Return Values: Tuples are commonly used to return multiple values from a function. For instance, a function might return (min_value, max_value).
+
+	c. Dictionary Keys: Since tuples are immutable, they can be used as keys in dictionaries, unlike lists. This is useful when you need a compound key made up of multiple elements.
+
+	d. Fixed-size Data Structures: When you need a collection of items that should not change, and you want to ensure the data structure’s integrity, a tuple is a good choice. This can 	also help with performance since tuples are generally faster to access than lists.
+
+	Sets
+
+	a. Membership Testing: Sets provide a highly efficient way to check for membership, thanks to their underlying hash table implementation. This is faster than checking membership in a 	list.
+
+	b. Removing Duplicates: If you have a list with duplicate elements and you want to remove the duplicates, converting the list to a set will automatically filter out any repeated 	values:
+
+	my_list = [1, 2, 2, 3, 4, 4, 5]
+	unique_list = list(set(my_list))
+
+	c. Set Operations: Sets support mathematical set operations like union, intersection, difference, and symmetric difference. These operations are useful for tasks involving 	collections of unique items:
+	a = {1, 2, 3}
+	b = {3, 4, 5}
+	union = a | b          
+	intersection = a & b   
+	difference = a - b      
+	symmetric_diff = a ^ b 
+
+	d. Data Integrity: Use sets to ensure that a collection of items has no duplicates, which is often useful in algorithms or when you need a collection of unique elements.
+
+	e. Performance Optimization: Due to their hash-based implementation, operations like membership testing and element removal are average O(1) in time complexity, which can be 	beneficial in performance-critical applications.
+
+Q7. 	Describe how to add, modify, and delete items in a dictionary with examples.
+
+Ans=> A Python dictionary is a data structure that stores the value in key: value pairs.
+	Dictionaries in Python is a data structure, used to store values in key: value format. This makes it different from lists, tuples, and arrays as in a dictionary each key has an 	associated value.
+	# Adding elemnts in dictionary
+	Dict = {}
+	print("Empty Dictionary: ")
+	print(Dict)
+	Dict[0] = 'Nitesh'
+	Dict[2] = 'jha'
+	Dict[3] = 1
+	print("\nDictionary after adding 3 elements: ")
+	print(Dict)
+
+	Dict['Value_set'] = 2, 3, 4
+	print("\nDictionary after adding 3 elements: ")
+	print(Dict)
+
+	Dict[2] = 'Welcome'
+	print("\nUpdated key value: ")
+	print(Dict)
+
+	# modify
+	my_dict = {'name': 'Alice', 'age': 30}
+	my_dict['city'] = 'New York'
+	print(my_dict)
+
+	#Deleting elements in dictionary
+	Dict = {1: 'welcome', 'name': 'Nitesh', 'title': 'jha'}
+
+	print("Dictionary =")
+	print(Dict)
+	del(Dict[1]) 
+	print("Data after deletion Dictionary=")
+	print(Dict)
+
+Q8. 	Discuss the importance of dictionary keys being immutable and provide examples.
+
+Ans=> Python, dictionary keys must be immutable because keys need to be hashable, and immutability ensure that the hash value of a key remains constant during its lifetime. 
+	Hashability refers to the property of an object to have a consistent hash value throughout its lifetime. Hash values are used to quickly locate the corresponding value in the 	dictionary.
+
+	Immutability ensures that an object’s state cannot be changed once it is created. For example, tuples and strings are immutable, whereas lists and dictionaries are mutable.
+
+	Consistency in Hashing: When a key is used in a dictionary, Python computes its hash value. If the key's value can change, its hash value might also change, leading to 	inconsistencies in the dictionary’s internal structure. This would cause the dictionary to behave unpredictably, making it impossible to reliably retrieve or update values.
+	
+	Data Integrity: Immutable keys ensure that the dictionary's data structure remains intact and reliable. It prevents the accidental or intentional alteration of keys, which could 	otherwise disrupt the mapping between keys and values.
+
+	Integers: Immutable and hashable.
+	my_dict = {1: 'one', 2: 'two'}
+
+	Strings: Immutable and hashable.
+	my_dict = {'name': 'Alice', 'age': 30}
+
+	Tuples: Immutable and hashable, provided they only contain other hashable types.
+	my_dict = {(1, 2): 'point', (3, 4): 'another point'}
+
+	Lists: Mutable and therefore not hashable.
+	my_dict = {[1, 2]: 'a list'}  # TypeError
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
